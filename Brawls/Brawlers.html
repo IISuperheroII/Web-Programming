@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawler</title>
+    <link rel="stylesheet" href="brawlers-style.css">
+    <script>
+        window.onload = function () {
+
+        fetch("https://api.brawlapi.com/v1/brawlers")
+        .then(res => {
+            return res.json();
+        }).then(data => {
+            console.log(data.list);
+            console.log(data);
+
+            for (i = 0; i < data.list.length; i++) {
+
+                let cardDiv = document.createElement("div");
+                    cardDiv.setAttribute("class","d-flex flex-row align-items-center col-6 col-sm-4 col-md-3 col-lg-3 mb-2");
+
+                let colorborderimage = "width: 68; border: 8px solid "+ data.list[i].rarity.color
+                let imageElement = document.createElement("img");
+                    imageElement.setAttribute("style", colorborderimage);
+                    imageElement.setAttribute("class", "opacity brl-ico5 mb-1 lazyloaded rounded");
+                    imageElement.setAttribute("src", data.list[i].imageUrl2);
+
+                let cardBody = document.createElement('div');
+                    cardBody.setAttribute('class', 'container-fluid');
+
+                let h2color = "text-shadow: black 1px 0 5px; color:" + data.list[i].rarity.color;
+                let cardTitle = document.createElement('h2');
+                    cardTitle.setAttribute('class', 'text-center rarity5 h6 mb-0');
+                    cardTitle.setAttribute('style',  h2color);
+                    cardTitle.innerHTML = data.list[i].name;
+
+                let cardText = document.createElement('p');
+                    cardText.setAttribute('class', 'text-center text-hp small mb-0 d-none d-sm-block');
+                    cardText.setAttribute('style', 'font-size:12px');
+                    cardText.innerHTML = data.list[i].class.name;
+
+                let spanText = document.createElement('span');
+                    spanText.setAttribute('class', 'text-dark small');
+                
+                cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardText);
+                
+                cardDiv.appendChild(imageElement);
+                cardDiv.appendChild(cardBody);
+
+                let container = document.getElementById('content');
+                container.appendChild(cardDiv);    
+            }
+            });   
+        }
+
+
+        function smoothScroll() {
+            var targetSection = document.getElementById("scrollHere");
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="hero">
+        <a class="background-class"></a>
+        <nav>
+            <img src="assets/Brawl-Stars-Emblem.png" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Brawler</a></li>
+                <li><a href="maps.html">Map</a></li>
+                <li><a href="gamemode.html">Game Mode</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="col-md-8">
+                <div class="row">
+                    <h1 style="font-size: 20vw;"> BRawl Stars </h1>
+                </div>
+                <div class="row pb-5 text-nowrap">
+                    <h1 id="demo" style="font-family: 'barlowregular'; font-size: 6vw;"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-0" id="scrollpages">
+        <section class="one containter d-flex text-uppercase">
+            <div class="col-md-2"></div>
+
+            <div class="col-md-8">
+                <div class="row">
+                    <h1 style="font-size: 20vw;"></h1>
+                </div>
+                <div class="row pb-5 text-nowrap">
+                    <h1 id="demo" style="font-family: 'barlowregular'; font-size: 6vw;"></h1>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </section>
+        <section class="two" id="scrollHere">
+            <div class="col-1"> </div>
+            <div class="col-10"> </div>
+            <div class="col-1"> </div>
+        </section>
+        
+
+    </div>
+    <div id="content"></div>
+    
+</body>
+</html>
