@@ -2,92 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with Background Video</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Bootstrap Beispiel</title>
+    
     <link rel="stylesheet" href="index-style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container-fluid p-0" id="scrollpages">
-        <section class="one hero" >
-            <video autoplay loop muted plays-inline class="back-video">
+        
+    <div class="container-fluid p-0">  
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#"><img src="assets/Brawl-Stars-Emblem.png" style="width: 80px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Startseite</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="Brawlers.html">Brawlers</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="maps.html">Maps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gamemode.html">GameMode</a>
+                </li>
+            </ul>
+            </div>
+        </nav>  
+        <section style="height: 100vh; width: 100vw; margin: 0;" id="scrollpages">
+            <video autoplay loop muted plays-inline class="back-video img-fluid" >
                 <source src="assets/StartingVideo.mp4" type="video/mp4">
             </video>
-            <nav>
-                <img src="assets/Brawl-Stars-Emblem.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="Brawlers.html">Brawler</a></li>
-                    <li><a href="maps.html">Map</a></li>
-                    <li><a href="gamemode.html">Game Mode</a></li>
-                </ul>
-            </nav>
-            <div class="content">
-                <div class="logo"></div>
-                <a  class= "explore" href="Brawlers.html">Explore The Brawlers</a>
-            </div>
-            
         </section>
+
         
-        <section class="two mobile-block teamup" id="teamup">
-        <div class="smartphone-with-game">
-            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/bg_intro_brawlstars.jpg" />
-        </div>
-        <div class="text-box onleft">
-            <h3>Unleash Chaos: Rally Your Team and Dive into Mayhem!</h3>
-            <p>Get ready for the ultimate BRAWL extravaganza! It's time to team up with your pals and dive into the wild world of multiplayer MAYHEM in Brawl Stars — the freshest game hot off the griddles of the masterminds behind Clash of Clans and Clash Royale.
-            Choose your favorite game mode, round up your friends, and brace yourselves for quick, chaotic matches that'll have you shooting 'em up, blowing 'em up, and punching 'em out! It's not just a game; it's an all-out BRAWL where the only goal is to emerge victorious. Are you ready to unleash the mayhem and claim your BRAWL glory? Let the games begin! 🚀💥🥊</p>
-            <div class="store-logos download">
-            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/footer_appstore.png" />
-            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/footer_googleplay.png" />
-            </div>
-        </div>
-        </section>
-        <section class="three mobile-block social" id="social">
-        <div class="text-box onright">
-        <h3>STAY UP-TO-DATE</h3>
-        <p>To stay at the peak of your gaming prowess, stay tuned to the in-game News section. Follow us on social media for the freshest updates and exclusive sneak peeks into the exciting projects our team is cooking up. Don't be a stranger—join the conversation! 👀🎮</p>
-        <span class="follow-us">FOLLOW BRAWL STARS ON</span>
-        <div class="store-logos social">
-            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_reddit.png" />
-            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_youtube.png" />
-            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_facebook.png" />
-            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_instagram.png" />
-            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_twitter.png" />
-        </div>
-        </div>
-        <div class="smartphone-with-game">
-        <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/bg_gamewebsite_brawlstars.png" />
-        </div>
-        </section>
-        <footer>
-            <div class="footer-content">
-              <div class="footer-social">
-                <div class="follow-footer">
-                  <span class="follow-us">FOLLOW BRAWL STARS ON</span>
-                  <div class="store-logos social">
-                    <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_reddit.png" />
-                    <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_youtube.png" />
-                    <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_facebook.png" />
-                    <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_instagram.png" />
-                    <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_twitter.png" />
-                  </div>
-                  
+        <section class="sectionbackground mobile-block" >
+            <div class="col-12 d-md-flex align-items-center">
+                <div class="col-md-6" style="display: flex;">
+                    <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/bg_intro_brawlstars.jpg" style="max-width:90%; height:auto;" class="img-fluid" alt="Brawl Stars Image" />
                 </div>
-                <button id="scrollToTopBtn">☝️</button>
-              </div>
-              <div class="footer-menu">
-                <ul>
-                  <li>#For Media</li>
-                  <li>#Terms of Service</li>
-                  <li>#Privacy Policy</li>
-                  <li>#Parent's Guide</li>
-                  <li>#Safe and Fair Play</li>
-                </ul>
-              </div>
+                <div class="col-md-6">
+                    <h3>Unleash Chaos: Rally Your Team and Dive into Mayhem!</h3>
+                    <p>Get ready for the ultimate BRAWL extravaganza! It's time to team up with your pals and dive into the wild world of multiplayer MAYHEM in Brawl Stars — the freshest game hot off the griddles of the masterminds behind Clash of Clans and Clash Royale. Choose your favorite game mode, round up your friends, and brace yourselves for quick, chaotic matches that'll have you shooting 'em up, blowing 'em up, and punching 'em out! It's not just a game; it's an all-out BRAWL where the only goal is to emerge victorious. Are you ready to unleash the mayhem and claim your BRAWL glory? Let the games begin! 🚀💥🥊</p>
+                    <div class="row">
+                        <div class="col-md-2 d-flex">
+                            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/footer_appstore.png" class="img-fluid mr-2" alt="App Store" />
+                        </div>
+                        <div class="col-md-2 d-flex">    
+                            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/footer_googleplay.png" class="img-fluid" alt="Google Play" />
+                        </div>
+                    </div>
+                </div>
             </div>
-        </footer>
-        </div>
-    </div>
-    
+        </section>
+
+        
+        <section class="sectionbackground mobile-block" style="background-image: url(https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/bg_gamesocial_brawlstars.jpg)">
+            <div class="col-12 d-md-flex align-items-center">
+                <div class="col-md-6">
+                    
+                    <div class="text-md-right"> 
+                        <h3>STAY UP-TO-DATE</h3>
+                        <p>To stay at the peak of your gaming prowess, stay tuned to the in-game News section. Follow us on social media for the freshest updates and exclusive sneak peeks into the exciting projects our team is cooking up. Don't be a stranger—join the conversation! 👀🎮</p>
+                        <span class="follow-us" >FOLLOW BRAWL STARS ON</span>
+        
+                        <div class="store-logos social " style="padding: 20px;">
+                            <div class="row">
+                            <div class="col-2 text-center">
+                                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_reddit.png" class="img-fluid mr-2" alt="Reddit" />
+                            </div>
+                            
+                            <div class="col-2 text-center">
+                                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_youtube.png" class="img-fluid mr-2" alt="YouTube" />
+                            </div>
+                            
+                            <div class="col-2 text-center">
+                                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_facebook.png" class="img-fluid mr-2" alt="Facebook" />
+                            </div>
+                            
+                            <div class="col-2 text-center">
+                                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_instagram.png" class="img-fluid mr-2" alt="Instagram" />
+                            </div>
+                            
+                            <div class="col-2 text-center">
+                                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_twitter.png" class="img-fluid mr-2" alt="Twitter" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="col-md-6" style="display: flex;">
+                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/bg_gamewebsite_brawlstars.png" style="max-width:90%; height:auto; padding: 10px 10px;" class="img-fluid" alt="Brawl Stars Image" />
+                </div>
+        </section>
+
+    </div>  
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>
