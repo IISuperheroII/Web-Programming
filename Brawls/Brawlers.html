@@ -2,118 +2,142 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Bootstrap Beispiel</title>
-    
-    <link rel="stylesheet" href="index-style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="brawlers-style.css">
+    <title>Brawlers</title>
+    <script>
+        window.onload = function () {
+
+        fetch("https://api.brawlapi.com/v1/brawlers")
+        .then(res => {
+            return res.json();
+        }).then(data => {
+            console.log(data.list);
+            console.log(data);
+
+            for (i = 0; i < data.list.length; i++) {
+
+                let cardDiv = document.createElement("div");
+                    cardDiv.setAttribute("class","d-flex flex-row align-items-center col-6 col-sm-4 col-md-3 col-lg-3 mb-2");
+
+                let colorborderimage = "width: 100px; border: 8px solid "+ data.list[i].rarity.color
+                let imageElement = document.createElement("img");
+                    imageElement.setAttribute("style", colorborderimage);
+                    imageElement.setAttribute("class", "opacity brl-ico5 mb-1 lazyloaded rounded");
+                    imageElement.setAttribute("src", data.list[i].imageUrl2);
+
+                let cardBody = document.createElement('div');
+                    cardBody.setAttribute('class', 'container-fluid');
+
+                let h2color = "text-shadow: black 1px 0 5px; color:" + data.list[i].rarity.color;
+                let cardTitle = document.createElement('h2');
+                    cardTitle.setAttribute('class', 'text-center rarity5 h6 mb-0');
+                    cardTitle.setAttribute('style',  h2color);
+                    cardTitle.innerHTML = data.list[i].name;
+
+                let cardText = document.createElement('p');
+                    cardText.setAttribute('class', 'text-center text-hp small mb-0 d-none d-sm-block');
+                    cardText.setAttribute('style', 'font-size:12px');
+                    cardText.innerHTML = data.list[i].class.name;
+
+                let spanText = document.createElement('span');
+                    spanText.setAttribute('class', 'text-dark small');
+                
+                cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardText);
+                
+                cardDiv.appendChild(imageElement);
+                cardDiv.appendChild(cardBody);
+
+                let container = document.getElementById('content');
+                container.appendChild(cardDiv);    
+            }});   
+        }
+    </script>
 </head>
 <body>
-        
-    <div class="container-fluid p-0">  
-        <nav class="navbar navbar-expand-lg navbar-dark">
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark ">
+        <div class="container">
             <a class="navbar-brand" href="#"><img src="assets/Brawl-Stars-Emblem.png" style="width: 80px;"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                <a class="nav-link" href="index.html">Startseite</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#.html">Brawlers</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="maps.html">Maps</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="gamemode.html">GameMode</a>
-                </li>
-            </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Startseite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#.html">Brawlers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="maps.html">Maps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gamemode.html">GameMode</a>
+                    </li>
+                </ul>
             </div>
-        </nav>  
-        <section style="height: 100vh; width: 100vw; margin: 0;" id="scrollpages">
-            <video autoplay loop muted plays-inline class="back-video img-fluid" >
-                <source src="assets/StartingVideo.mp4" type="video/mp4">
-            </video>
-        </section>
-
-        
-        <section class="sectionbackground mobile-block" >
-            <div class="col-12 d-md-flex align-items-center">
-                <div class="col-md-6" style="display: flex;">
-                    <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/bg_intro_brawlstars.jpg" style="max-width:90%; height:auto;" class="img-fluid" alt="Brawl Stars Image" />
-                </div>
-                <div class="col-md-6">
-                    <h3>Unleash Chaos: Rally Your Team and Dive into Mayhem!</h3>
-                    <p>Get ready for the ultimate BRAWL extravaganza! It's time to team up with your pals and dive into the wild world of multiplayer MAYHEM in Brawl Stars — the freshest game hot off the griddles of the masterminds behind Clash of Clans and Clash Royale. Choose your favorite game mode, round up your friends, and brace yourselves for quick, chaotic matches that'll have you shooting 'em up, blowing 'em up, and punching 'em out! It's not just a game; it's an all-out BRAWL where the only goal is to emerge victorious. Are you ready to unleash the mayhem and claim your BRAWL glory? Let the games begin! 🚀💥🥊</p>
-                    <div class="row">
-                        <div class="col-md-2 d-flex">
-                            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/footer_appstore.png" class="img-fluid mr-2" alt="App Store" />
-                        </div>
-                        <div class="col-md-2 d-flex">    
-                            <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/footer_googleplay.png" class="img-fluid" alt="Google Play" />
-                        </div>
-                    </div>
-                </div>
+        </div>
+    </nav> -->
+    <nav class="navbar fixed-top navbar-expand-lg py-3">
+        <div class="container-fluid m-0">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="assets/Brawl-Stars-Emblem.png" width="" height="30" class="d-inline-block align-top px-4" alt="">
+            </a>
+            <div class="collapse navbar-collapse text-uppercase" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mr-5" style="font-size: 2vh;">
+                    <li class="nav-item px-2">
+                        <a class="nav-link scroll-link" href="index.html"> Home </a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link scroll-link" href="#"> Brawlers </a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link scroll-link" href="maps.html"> Maps </a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link scroll-link" href="gamemode.html"> GameMode </a>
+                    </li>
+                </ul>
             </div>
-        </section>
-
-        
-        <section class="sectionbackground mobile-block" style="background-image: url(https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/bg_gamesocial_brawlstars.jpg)">
-            <div class="col-12 d-md-flex align-items-center">
-                <div class="col-md-6">
-                    
-                    <div class="text-md-right"> 
-                        <h3>STAY UP-TO-DATE</h3>
-                        <p>To stay at the peak of your gaming prowess, stay tuned to the in-game News section. Follow us on social media for the freshest updates and exclusive sneak peeks into the exciting projects our team is cooking up. Don't be a stranger—join the conversation! 👀🎮</p>
-                        <span class="follow-us" >FOLLOW BRAWL STARS ON</span>
-        
-                        <div class="store-logos social " style="padding: 20px;">
-                            <div class="row">
-                            <div class="col-2 text-center">
-                                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_reddit.png" class="img-fluid mr-2" alt="Reddit" />
-                            </div>
-                            
-                            <div class="col-2 text-center">
-                                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_youtube.png" class="img-fluid mr-2" alt="YouTube" />
-                            </div>
-                            
-                            <div class="col-2 text-center">
-                                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_facebook.png" class="img-fluid mr-2" alt="Facebook" />
-                            </div>
-                            
-                            <div class="col-2 text-center">
-                                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_instagram.png" class="img-fluid mr-2" alt="Instagram" />
-                            </div>
-                            
-                            <div class="col-2 text-center">
-                                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/icon_gs_twitter.png" class="img-fluid mr-2" alt="Twitter" />
-                            </div>
-                        </div>
-                    </div>
-                    
-                    </div>
-                </div>
-                <div class="col-md-6" style="display: flex;">
-                <img src="https://cdn.supercell.com/supercell.com/191205152910/all/themes/supercell/img/18/bg_gamewebsite_brawlstars.png" style="max-width:90%; height:auto; padding: 10px 10px;" class="img-fluid" alt="Brawl Stars Image" />
-                </div>
-        </section>
-
-    </div>  
+    </nav>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+
+
+    <div class="container-fluid p-0" id="scrollpages">
+    <section class="bg-customize d-flex text-uppercase align-items-end">
+        <div class="col-3">
+            <img src="https://gamehag.com/img/rewards/logo/50zl-w-brawl-stars.png" class="img-fluid" alt="Brawl Stars Logo">
+        </div>
+        <div class="col-9"></div>
+
+    </section>
+
+    <section>
+        <div class="container-fluid post-type5 pb-3">
+            <div class="pb-3 pt-3">
+            <h1 class="display-3 text-white">Alle Brawler</h1>
+            <p class="text-hp h5">Liste aller Brawler in Brawl Stars. <br class="d-lg-none">Überprüfen Sie ihre Statistiken und erfahren Sie mehr darüber. <br><span class="badge badge-danger mr-1 shadow-none font-weight-normal">New</span> Sorted by unlock rates by players in the last month!</p>
+            </div>
+            <div class="row justify-content-between align-items-center" id = "content">
+                
+            </div>
+        </div>
+    </section>
+
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery scripts at the end of your body if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
