@@ -6,9 +6,19 @@
 * {
     font-family: 'Nougat-ExtraBlack', sans-serif;
 }
-
+.navbar {
+    background-color: rgba(76, 75, 75, 0.25); 
+}
+.navbar-nav .nav-link {
+    color: black !important; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+}
 .bg-customize {
-    background-image: url('https://www.playstrong.it/wp-content/uploads/2019/02/brawl_sunset.jpg');
+    background-image: url('assets/stickers-Brawlers.webp');
     background-size: cover;
     background-position: center;
 }

@@ -6,95 +6,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="maps-style.css">
     <title>All Maps</title>
-    <script>
-        window.onload = function () {
-            
-        fetch("https://api.brawlapi.com/v1/maps")
-        .then(res => {
-            return res.json();
-        }).then(data => {
-            var gameModeLists = {
-                "Gem Grab": [],
-                "Heist": [],
-                "Brawl Ball": [],
-                "Bounty": [],
-                "Hot Zone": [],
-                "Knockout": [],
-                "Wipeout": [],
-                "Solo Showdown": [],
-                "Duo Showdown": []
-            };
+    <script src="script.js"></script>
 
-            for (var i = 0; i < data.list.length; i++) {
-                var currentGameMode = data.list[i].gameMode.name;
-                if (gameModeLists.hasOwnProperty(currentGameMode)) {
-                    gameModeLists[currentGameMode].push(data.list[i]);
-                } 
-            } 
-    
-            let createdModes = []; // Array to track which modes have been created
-
-            for (var key in gameModeLists) {
-                // Check if elements for this mode have already been created
-                if (!createdModes.includes(key)) {
-                    let divcolor = "background-color:" + gameModeLists[key][0].gameMode.color + ";";
-                    let cardDiv = document.createElement("div");
-                    cardDiv.setAttribute("class", "card col-12 mb-1");
-                    cardDiv.setAttribute("style", divcolor);
-
-                    let cardBody = document.createElement("div");
-                    cardDiv.setAttribute("class", "row align-items-center map-card-title");
-
-                    let imageElement = document.createElement("img");
-                    imageElement.setAttribute("class", "mr-2 ls-is-cached lazyloaded");
-                    imageElement.setAttribute("src", gameModeLists[key][0].gameMode.imageUrl);
-                    imageElement.setAttribute("style", "width=32 ");
-
-                    let cardTitle = document.createElement('h3');
-                    cardTitle.setAttribute('class', 'h3 recomm-mode-text pt-2');
-                    cardTitle.innerHTML = gameModeLists[key][0].gameMode.name;
-
-                    cardBody.appendChild(imageElement);
-                    cardBody.appendChild(cardTitle);
-
-                    cardDiv.appendChild(cardBody);
-
-                    let container = document.getElementById('content');
-                    container.appendChild(cardDiv);
-
-                    createdModes.push(key); // Add the mode to the createdModes array
-                }
-
-                // Create elements for each map
-                if (gameModeLists.hasOwnProperty(key)) {
-                    for (var j = 0; j < gameModeLists[key].length; j++) {
-                        let cardDiv = document.createElement("div");
-                        cardDiv.setAttribute("class", "map-def col-6 col-md-4 col-lg-3 map-block mb-0");
-
-                        let cardBody = document.createElement("div");
-                        cardBody.setAttribute("class", "img-fluid map-block");
-
-                        let imageElement = document.createElement("img");
-                        imageElement.setAttribute("class", "ls-is-cached lazyloaded");
-                        imageElement.setAttribute("src", gameModeLists[key][j].imageUrl);
-
-                        cardBody.appendChild(imageElement);
-                        cardDiv.appendChild(cardBody);
-
-                        let container = document.getElementById('content');
-                        container.appendChild(cardDiv);
-                    }
-                }
-            }
-            let cardDiv = document.createElement("div");
-                cardDiv.setAttribute("class", "mb-2 ");
-                cardDiv.setAttribute("class", "vm-placement");
-
-            let container = document.getElementById('content');
-                container.appendChild(cardDiv);
-            });   
-        }
-    </script>
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-lg py-3">
@@ -103,7 +16,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="/">
-                <img src="assets/Brawl-Stars-Emblem.png" width="" height="30" class="d-inline-block align-top px-4" alt="">
+                <img src="assets/Brawl-Stars-Emblem.png" width="" height="50" class="d-inline-block align-top px-4" alt="">
             </a>
             <div class="collapse navbar-collapse text-uppercase" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mr-5" style="font-size: 2vh;">
@@ -117,7 +30,7 @@
                         <a class="nav-link scroll-link" href="#"> Maps </a>
                     </li>
                     <li class="nav-item px-2">
-                        <a class="nav-link scroll-link" href="gamemode.html"> GameMode </a>
+                        <a class="nav-link scroll-link" href="faqs.html"> FAQ </a>
                     </li>
                 </ul>
             </div>
@@ -139,39 +52,12 @@
         <div id="content-container">
             <div class="container-fluid post-type3">
                 <div class="container pb-2 pt-2">
-                    <h1 class="display-3 text-white">Alle Maps in Brawl Stars</h1>
-                    <!-- <p class="text-hp h5">Liste aller Maps, sortiert nach Spielmodi. <br class="d-lg-none">Klicke auf eine Map, um die neuesten Daten für die besten und alle Brawler zu sehen.<br>Sorted by battles in the last month.</p>
-                    <span class="text-hp2">Verknüpfungen:</span> -->
-                    <!-- <p class="text-dark text-left pl-1 mb-0">
-                <a href="/de/maps/#Brawl-Ball" class="link opacity"><span style="color:#9ab1fd;">Brawl Ball</span></a><span class="text-dark pl-1">(<span class="text-hp">13</span>)</span>
-                |
-                <a href="/de/maps/#Solo-Showdown" class="link opacity"><span style="color:#91e136;">Solo Showdown</span></a><span class="text-dark pl-1">(<span class="text-hp">10</span>)</span>
-                |
-                <a href="/de/maps/#Duo-Showdown" class="link opacity"><span style="color:#91e136;">Duo Showdown</span></a><span class="text-dark pl-1">(<span class="text-hp">10</span>)</span>
-                |
-                <a href="/de/maps/#Knockout" class="link opacity"><span style="color:#fd9b0e;">Knockout</span></a><span class="text-dark pl-1">(<span class="text-hp">12</span>)</span>
-                |
-                <a href="/de/maps/#Gem-Grab" class="link opacity"><span style="color:#d852ff;">Gem Grab</span></a><span class="text-dark pl-1">(<span class="text-hp">13</span>)</span>
-                |
-                <a href="/de/maps/#Hot-Zone" class="link opacity"><span style="color:#ff4343;">Hot Zone</span></a><span class="text-dark pl-1">(<span class="text-hp">8</span>)</span>
-                |
-                <a href="/de/maps/#Heist" class="link opacity"><span style="color:#d852ff;">Heist</span></a><span class="text-dark pl-1">(<span class="text-hp">5</span>)</span>
-                |
-                <a href="/de/maps/#Wipeout" class="link opacity"><span style="color:#24d6ff;">Wipeout</span></a><span class="text-dark pl-1">(<span class="text-hp">6</span>)</span>
-                |
-                <a href="/de/maps/#Bounty" class="link opacity"><span style="color:#24d6ff;">Bounty</span></a><span class="text-dark pl-1">(<span class="text-hp">4</span>)</span>
-                |
-                <a href="/de/maps/#Duels" class="link opacity"><span style="color:#c2ed00;">Duels</span></a><span class="text-dark pl-1">(<span class="text-hp">4</span>)</span>
-                |
-                <a href="/de/maps/#Boss-Fight" class="link opacity"><span style="color:#ff6847;">Boss Fight</span></a><span class="text-dark pl-1">(<span class="text-hp">1</span>)</span>
-                |
-                <a href="/de/maps/#Siege" class="link opacity"><span style="color:#ff6847;">Siege</span></a><span class="text-dark pl-1">(<span class="text-hp">4</span>)</span>
-                </p> -->
+                    <h1 class="display-3 ">Alle Maps in Brawl Stars</h1>
                 </div>
             </div>
             <div class="container-fluid post-type1">
                 <div class="container pt-2 pb-2">
-                    <div id="content" class="row mb-4 align-items-center justify-content-center">
+                    <div id="content">
                     </div>
                 </div>
             </div>
@@ -180,7 +66,6 @@
 
     </div>
 
-    <!-- Add Bootstrap JS and jQuery scripts at the end of your body if needed -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

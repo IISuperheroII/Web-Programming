@@ -2,8 +2,23 @@
     font-family: 'Nougat-ExtraBlack'; 
     src: url('assets/Nougat ExtraBlack.ttf') format('truetype');
   }
+
 * {
     font-family: 'Nougat-ExtraBlack', sans-serif;
+}
+
+.navbar {
+    background-color: rgba(76, 75, 75, 0.25); 
+}
+
+.navbar-nav .nav-link {
+    color: black !important; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
 }
 
 .back-video{
@@ -20,16 +35,17 @@
         height: auto;
     }
 }
+
 @media (max-aspect-ratio: 16/9){
     .back-video{
         width: auto;
         height: 100%;
     }
 }
+
 .nav-link {
     font-size: 25px; 
 }
-
 
 .back-video {
     object-fit: cover; 
@@ -44,9 +60,11 @@ section {
     min-height: 50vh;
     scroll-snap-align: start;
 }
+
 section.socialmedia {
     height: 100vh; 
 }
+
 .sectionbackground {
 background-size:  cover;
 background-position: center;
@@ -62,4 +80,4 @@ background-position: center;
     text-align: left;
     max-width:100%;
     height:auto;
-    }
+}
