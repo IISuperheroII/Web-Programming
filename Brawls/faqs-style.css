@@ -8,12 +8,12 @@
 }
 
 .navbar {
-    background-color: rgba(76, 75, 75, 0.25); /* Adjust the alpha value as needed */
+    background-color: rgba(76, 75, 75, 0.25); 
 }
 
 .navbar-nav .nav-link {
-    color: black !important; /* Use !important to override Bootstrap styles if needed */
-    text-decoration: none; /* Remove default underline */
+    color: rgb(224, 222, 222) !important; 
+    text-decoration: none; 
     transition: color 0.3s; 
 }
 
@@ -22,7 +22,6 @@
 }
 
 section {
-    display: grid;
     place-items: center;
     align-items: center;
     min-height: 100vh;
@@ -60,4 +59,28 @@ section {
 
 .pt-3, .py-3 {
     padding-top: 1rem!important;
+}
+.faq-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.faq-question {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }

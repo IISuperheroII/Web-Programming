@@ -5,15 +5,17 @@
 
 * {
     font-family: 'Nougat-ExtraBlack', sans-serif;
+    color: white;
+    text-shadow: black 1px 0 50px;
 }
 
 .navbar {
-    background-color: rgba(76, 75, 75, 0.25); 
+    background-color: rgba(76, 75, 75, 0.7); 
 }
 .navbar-nav .nav-link {
-    color: black !important; 
+    color: white !important; 
     text-decoration: none; 
-    transition: color 0.3s; 
+    transition: color 0.3s , text-decoration 0.3s; 
 }
 .navbar-nav .nav-link:hover {
     text-decoration: underline;

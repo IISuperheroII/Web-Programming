@@ -12,8 +12,8 @@
 }
 
 .navbar-nav .nav-link {
-    color: black !important; /* Use !important to override Bootstrap styles if needed */
-    text-decoration: none; /* Remove default underline */
+    color: white !important;  
+    text-decoration: none; 
     transition: color 0.3s; 
 }
 
@@ -39,9 +39,7 @@ section {
     width: 100%;
     height: 100%;
 }
-/* .map-def {
-    float: left;
-} */
+
 .mb-0, .my-0 {
     margin-bottom: 0!important;
 }
