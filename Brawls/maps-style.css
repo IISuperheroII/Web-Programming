@@ -2,18 +2,21 @@
     font-family: 'Nougat-ExtraBlack'; 
     src: url('assets/Nougat ExtraBlack.ttf') format('truetype');
   }
-
+  
 * {
     font-family: 'Nougat-ExtraBlack', sans-serif;
 }
+
 .navbar {
-    background-color: rgba(76, 75, 75, 0.25); 
+    background-color: rgba(76, 75, 75, 0.25); /* Adjust the alpha value as needed */
 }
+
 .navbar-nav .nav-link {
-    color: black !important; 
-    text-decoration: none; 
+    color: black !important; /* Use !important to override Bootstrap styles if needed */
+    text-decoration: none; /* Remove default underline */
     transition: color 0.3s; 
 }
+
 .navbar-nav .nav-link:hover {
     text-decoration: underline;
 }

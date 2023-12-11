@@ -10,13 +10,11 @@
 .navbar {
     background-color: rgba(76, 75, 75, 0.25); 
 }
-
 .navbar-nav .nav-link {
     color: black !important; 
     text-decoration: none; 
     transition: color 0.3s; 
 }
-
 .navbar-nav .nav-link:hover {
     text-decoration: underline;
 }
@@ -41,10 +39,6 @@
         width: auto;
         height: 100%;
     }
-}
-
-.nav-link {
-    font-size: 25px; 
 }
 
 .back-video {
