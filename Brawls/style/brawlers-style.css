@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Nougat-ExtraBlack'; 
-    src: url('assets/Nougat ExtraBlack.ttf') format('truetype');
+    src: url('../assets/Nougat ExtraBlack.ttf') format('truetype');
   }
-  
+
 * {
     font-family: 'Nougat-ExtraBlack', sans-serif;
 }
@@ -12,7 +12,7 @@
 }
 
 .navbar-nav .nav-link {
-    color: rgb(224, 222, 222) !important; 
+    color: white !important;  
     text-decoration: none; 
     transition: color 0.3s; 
 }
@@ -22,6 +22,7 @@
 }
 
 section {
+    display: grid;
     place-items: center;
     align-items: center;
     min-height: 100vh;
@@ -29,7 +30,7 @@ section {
 }
 
 .bg-customize {
-    background-image: url('assets/Brael Stars.jpg');
+    background-image: url('https://www.playstrong.it/wp-content/uploads/2019/02/brawl_sunset.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -59,28 +60,4 @@ section {
 
 .pt-3, .py-3 {
     padding-top: 1rem!important;
-}
-.faq-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.faq-question {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #ddd;
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-
-.faq-answer {
-    display: none;
-    padding: 10px;
-    background-color: #f9f9f9;
-    margin-bottom: 10px;
-    border-radius: 5px;
 }
